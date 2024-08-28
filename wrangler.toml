@@ -1,0 +1,26 @@
+name = "cloudflare-pages-starter"
+compatibility_date = "2024-04-05"
+pages_build_output_dir = ".vercel/output/static"
+
+compatibility_flags = ["nodejs_compat"]
+
+[env.preview.vars] # 预览环境变量, 如果有其他非secret变量,都需要放这里
+BUN_VERSION = "1.1.8"
+NEXT_PUBLIC_APP_URL = "https://develop.your-pages-name.pages.dev"
+
+[env.production.vars] # 生产环境变量, 如果有其他非secret变量,都需要放这里
+BUN_VERSION = "1.1.8"
+NEXT_PUBLIC_APP_URL = "https://your-pages-name.pages.dev"
+
+[[d1_databases]] # 测试环境(本地) D1 数据库
+binding = "DB"
+database_name = "your-d1-database-name"
+database_id = "your-d1-database-id"
+[[env.preview.d1_databases]] # 测试环境 D1 数据库
+binding = "DB"
+database_name = "your-d1-database-name"
+database_id = "your-d1-database-id"
+[[env.production.d1_databases]] # 生产环境 D1 数据库
+binding = "DB"
+database_name = "your-d1-database-name"
+database_id = "your-d1-database-id"

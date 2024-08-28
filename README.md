@@ -1,34 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 使用 nestjs+honojs+drizzle+shadcnui 开发部署在 cloudflare pages 上的 web app
 
-## Getting Started
+## 使用方法
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `Fork`本项目,
+- `Cloudflare D1` 数据库开通
+- `wrangler.toml` 配置好`预览`,`生产`环境的`D1`数据库`id`
+- `wrangler.toml` 配置好`预览`,`生产`环境的`NEXT_PUBLIC_APP_URL`
+- `Cloudflare Pages` 新建项目,使用`github repo`, 选择你的`Fork`后的项目.
+- `Pages`的`仪表盘`中, `设置`-`环境变量`,填入`github`, `google`相关的`client id`和`client secret`(如果需要第三方登入的话), 填入`AUTH_SECRET`
+- `设置`-`构建和部署`中, 生产选`master`或者`main`分支, 预览选`develop`分支
+- 提交`develop`分支就会自动构建`预览`环境, 提交`master`或者`main`分支就会自动构建`生产`环境

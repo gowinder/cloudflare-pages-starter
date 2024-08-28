@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1724748199659,
+      "tag": "0000_fair_spyke",
+      "breakpoints": true
+    }
+  ]
+}
